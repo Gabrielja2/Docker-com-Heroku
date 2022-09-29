@@ -1,0 +1,21 @@
+# setup:
+#   addons:
+#     - plan: heroku-postgresql
+#       as: DATABASE
+# build:
+#   docker:
+#     web: Dockerfile
+#     worker: worker/Dockerfile
+# release:
+#   command:
+#     - ./deployment-tasks.sh
+#   image: worker
+# run: //Se o comando run não for adicionado ao heroku.yml, por padrão ele utiliza o CMD especificado no Dockerfile.
+#   web: node index.js
+
+
+build:
+  docker:
+    web: Dockerfile
+run:
+  web: node index.js
